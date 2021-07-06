@@ -8,7 +8,7 @@ const VideoList = ({videos}) =>{
     });
 
     //props.videos
-   return <div>{renderedList}</div>
+   return <div className="ui relaxed divided list" >{renderedList}</div>
     
 };
 
