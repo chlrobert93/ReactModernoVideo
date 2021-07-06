@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const KEY = 'AIzaSyDNVEVh_BoiqP5L_vdiDZZgth6W6b81b8U';
+const KEY = 'AIzaSyBA9coMtDZzoRZgyJ_xfCdD3q_c5LELh64';
 
 
 //Crear instancia preconfigurada
