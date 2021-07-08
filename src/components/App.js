@@ -1,12 +1,19 @@
 import React from 'react';
+import './VideoItem.css';
 import SearchBar from './SearchBar';
 import youtube from '../apis/youtube';
 import VideoList from './VideoList';
 import VideoDetail from './VideoDetail';
 
+
 class App extends React.Component{
 
   state = {videos: [], slectedVideo: null };
+
+
+  componentDidMount(){
+     this.onTermSubmit('Iron Maiden - The Trooper');  
+  };
 
     //Terminos de envio
   onTermSubmit = async term => {
@@ -20,7 +27,9 @@ class App extends React.Component{
    });
 
      console.log(response);
-     this.setState({ videos: response.data.items});
+     this.setState({ videos: response.data.items,
+        selectedVideo: response.data.items[0]
+    });
   };
 //v= videos
 //callback
@@ -29,13 +38,19 @@ class App extends React.Component{
       console.log('From the App!!',video);
       //Actualizar el video selecionado
       this.setState({selectedVideo: video});
+
+      //Seleccionar el primer video
+
+    
   };
 
     render() {
         return (
+
+          <div className="colColorBody"> 
             <div className="ui container" style={{marginTop: '10px'}}>
                 <SearchBar onFormSubmit={this.onTermSubmit} />
-                <div className="ui grid">
+                <div className="ui stackable grid">
                    <div className="ui row">
                        <div className="eleven wide column">
                           <VideoDetail video={this.state.selectedVideo}/>     
@@ -45,6 +60,7 @@ class App extends React.Component{
                        </div>
                    </div>
                 </div>
+            </div>
             </div>
         );
     }
