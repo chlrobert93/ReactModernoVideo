@@ -12,7 +12,7 @@ class App extends React.Component{
 
 
   componentDidMount(){
-     this.onTermSubmit('Iron Maiden - The Trooper');  
+     this.onTermSubmit('Iron Maiden - The Trooper (En Vivo!) ');  
   };
 
     //Terminos de envio
@@ -47,7 +47,7 @@ class App extends React.Component{
     render() {
         return (
 
-          <div className="colColorBody"> 
+          <div className="colorPage"> 
             <div className="ui container" style={{marginTop: '10px'}}>
                 <SearchBar onFormSubmit={this.onTermSubmit} />
                 <div className="ui stackable grid">
